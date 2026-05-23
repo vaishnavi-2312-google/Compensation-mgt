@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0B1020;
+  --foreground: #F8FAFC;
+  --card: #1A2236;
+  --card-foreground: #F8FAFC;
+  --popover: #121826;
+  --popover-foreground: #F8FAFC;
+  --primary: #7C5CFF;
+  --primary-foreground: #F8FAFC;
+  --secondary: #121826;
+  --secondary-foreground: #F8FAFC;
+  --muted: #94A3B8;
+  --muted-foreground: #94A3B8;
+  --accent: #22C55E;
+  --accent-foreground: #F8FAFC;
+  --destructive: #EF4444;
+  --destructive-foreground: #F8FAFC;
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.08);
+  --ring: #7C5CFF;
+}
+
+@theme {
+  --color-bg-primary: #0B1020;
+  --color-bg-secondary: #121826;
+  --color-card: #1A2236;
+  --color-accent-primary: #7C5CFF;
+  --color-accent-secondary: #22C55E;
+  --color-text-primary: #F8FAFC;
+  --color-text-secondary: #94A3B8;
+  --color-border-custom: rgba(255, 255, 255, 0.08);
+  --color-hover-custom: rgba(255, 255, 255, 0.04);
+  --color-danger: #EF4444;
+  --color-warning: #F59E0B;
+  
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --radius-card: 20px;
+  --radius-btn: 14px;
+  --radius-input: 14px;
+  --radius-table: 18px;
+}
+
+body {
+  background-color: #0B1020;
+  color: #F8FAFC;
+  font-family: var(--font-sans);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0B1020;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(26, 34, 54, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(26, 34, 54, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
