@@ -127,19 +127,19 @@ export default function SalaryTable({
                   <span
                     className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider ${
                       row.confidenceScore === 'High'
-                        ? 'bg-emerald-500/10 text-emerald-400'
+                        ? 'bg-emerald-500/10 text-emerald-700 border border-emerald-500/20'
                         : row.confidenceScore === 'Medium'
-                        ? 'bg-warning/10 text-warning'
-                        : 'bg-rose-500/10 text-rose-400'
+                        ? 'bg-amber-500/10 text-amber-700 border border-amber-500/20'
+                        : 'bg-rose-500/10 text-rose-700 border border-rose-500/20'
                     }`}
                   >
                     <span
                       className={`h-1.5 w-1.5 rounded-full ${
                         row.confidenceScore === 'High'
-                          ? 'bg-emerald-400'
+                          ? 'bg-emerald-600'
                           : row.confidenceScore === 'Medium'
-                          ? 'bg-warning'
-                          : 'bg-rose-400'
+                          ? 'bg-amber-500'
+                          : 'bg-rose-600'
                       }`}
                     />
                     {row.confidenceScore}

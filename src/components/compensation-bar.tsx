@@ -28,25 +28,28 @@ export default function CompensationBar({ base, bonus, stock, compact = false }:
     return (
       <div className="glass-card p-2 rounded-[var(--radius-card)]">
         {/* Visual Bar Stack */}
-        <div className="flex h-2 overflow-hidden rounded-full bg-[var(--color-hover-custom)]">
+        <div className="flex h-2 overflow-hidden rounded-full bg-hover-custom">
           {base > 0 && (
             <motion.div
               {...segmentProps}
-              style={{ width: `${basePct}%`, background: 'var(--color-accent-primary)' }}
+              style={{ width: `${basePct}%` }}
+              className="bg-accent-primary"
               title={`Base: ${formatCurrency(base)} (${basePct.toFixed(0)}%)`}
             />
           )}
           {stock > 0 && (
             <motion.div
               {...segmentProps}
-              style={{ width: `${stockPct}%`, background: 'var(--color-accent-secondary)' }}
+              style={{ width: `${stockPct}%` }}
+              className="bg-accent-secondary"
               title={`Stock: ${formatCurrency(stock)} (${stockPct.toFixed(0)}%)`}
             />
           )}
           {bonus > 0 && (
             <motion.div
               {...segmentProps}
-              style={{ width: `${bonusPct}%`, background: 'var(--color-highlight)' }}
+              style={{ width: `${bonusPct}%` }}
+              className="bg-highlight"
               title={`Bonus: ${formatCurrency(bonus)} (${bonusPct.toFixed(0)}%)`}
             />
           )}
@@ -58,48 +61,51 @@ export default function CompensationBar({ base, bonus, stock, compact = false }:
   return (
     <div className="space-y-2 glass-card p-3 rounded-[var(--radius-card)]">
       {/* Visual Bar Stack */}
-      <div className="flex h-4 w-full overflow-hidden rounded-md bg-[var(--color-hover-custom)]">
+      <div className="flex h-4 w-full overflow-hidden rounded-md bg-hover-custom">
         {base > 0 && (
           <motion.div
             {...segmentProps}
-            style={{ width: `${basePct}%`, background: 'var(--color-accent-primary)' }}
+            style={{ width: `${basePct}%` }}
+            className="bg-accent-primary"
           />
         )}
         {stock > 0 && (
           <motion.div
             {...segmentProps}
-            style={{ width: `${stockPct}%`, background: 'var(--color-accent-secondary)' }}
+            style={{ width: `${stockPct}%` }}
+            className="bg-accent-secondary"
           />
         )}
         {bonus > 0 && (
           <motion.div
             {...segmentProps}
-            style={{ width: `${bonusPct}%`, background: 'var(--color-highlight)' }}
+            style={{ width: `${bonusPct}%` }}
+            className="bg-highlight"
           />
         )}
       </div>
 
       {/* Legend & Breakdown */}
-      <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-[var(--color-text-secondary)]">
-        <div className="flex items-center gap-1.5">
-          <span className="h-2 w-2 rounded-full bg-[var(--color-accent-primary)]" />
+      <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-text-secondary">
+        <div className="flex items-center gap-1.5 font-medium">
+          <span className="h-2.5 w-2.5 rounded-full bg-accent-primary" />
           <span>
-            Base: <strong className="text-[var(--color-text-primary)]">{formatCurrency(base)}</strong> ({basePct.toFixed(0)}%)
+            Base: <strong className="text-text-primary">{formatCurrency(base)}</strong> ({basePct.toFixed(0)}%)
           </span>
         </div>
         {stock > 0 && (
-          <div className="flex items-center gap-1.5">
-            <span className="h-2 w-2 rounded-full bg-[var(--color-accent-secondary)]" />
+          <div className="flex items-center gap-1.5 font-medium">
+            <span className="h-2.5 w-2.5 rounded-full bg-accent-secondary" />
             <span>
-              Stock: <strong className="text-[var(--color-text-primary)]">{formatCurrency(stock)}</strong> ({stockPct.toFixed(0)}%)
+              Stock: <strong className="text-text-primary">{formatCurrency(stock)}</strong> ({stockPct.toFixed(0)}%)
             </span>
           </div>
         )}
         {bonus > 0 && (
-          <div className="flex items-center gap-1.5">
-            <span className="h-2 w-2 rounded-full bg-[var(--color-highlight)]" />
+          <div className="flex items-center gap-1.5 font-medium">
+            <span className="h-2.5 w-2.5 rounded-full bg-highlight" />
             <span>
-              Bonus: <strong className="text-[var(--color-text-primary)]">{formatCurrency(bonus)}</strong> ({bonusPct.toFixed(0)}%)
+              Bonus: <strong className="text-text-primary">{formatCurrency(bonus)}</strong> ({bonusPct.toFixed(0)}%)
             </span>
           </div>
         )}

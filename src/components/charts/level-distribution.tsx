@@ -15,9 +15,9 @@ export default function LevelDistributionChart({ data }: LevelDistributionProps)
   const customTooltip = ({ active, payload, label }: any) => {
     if (active && payload && payload.length) {
       return (
-        <div className="rounded-lg border border-border-custom bg-bg-secondary p-3 shadow-md">
-          <p className="text-xs font-semibold uppercase tracking-wider text-text-secondary">Level: {label}</p>
-          <p className="text-sm font-bold text-accent-primary mt-1">
+        <div className="rounded-lg border border-border-custom bg-white/95 backdrop-blur-md p-3 shadow-md">
+          <p className="text-xs font-bold uppercase tracking-wider text-text-secondary">Level: {label}</p>
+          <p className="text-sm font-black text-accent-primary mt-1">
             Entries: {payload[0].value}
           </p>
         </div>
@@ -34,10 +34,10 @@ export default function LevelDistributionChart({ data }: LevelDistributionProps)
           layout="vertical"
           margin={{ top: 10, right: 10, left: -20, bottom: 0 }}
         >
-          <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.04)" horizontal={false} />
+          <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,0,0,0.06)" horizontal={false} />
           <XAxis
             type="number"
-            stroke="#94A3B8"
+            stroke="#737373"
             fontSize={11}
             tickLine={false}
             axisLine={false}
@@ -46,16 +46,16 @@ export default function LevelDistributionChart({ data }: LevelDistributionProps)
           <YAxis
             type="category"
             dataKey="level"
-            stroke="#94A3B8"
+            stroke="#737373"
             fontSize={12}
             tickLine={false}
             axisLine={false}
             dx={-4}
           />
-          <Tooltip content={customTooltip} cursor={{ fill: 'rgba(255, 255, 255, 0.02)' }} />
+          <Tooltip content={customTooltip} cursor={{ fill: 'rgba(0, 0, 0, 0.01)' }} />
           <Bar
             dataKey="count"
-            fill="#7C5CFF"
+            fill="#1F2937"
             radius={[0, 4, 4, 0]}
             maxBarSize={20}
           />

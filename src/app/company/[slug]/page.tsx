@@ -202,7 +202,7 @@ export default function CompanyPage({ params }: PageProps) {
                 onClick={() => setActiveRoleTab(role)}
                 className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-colors ${
                   activeRoleTab === role
-                    ? 'bg-accent-primary text-text-primary shadow-sm'
+                    ? 'bg-accent-primary text-white shadow-sm'
                     : 'text-text-secondary hover:text-text-primary'
                 }`}
               >

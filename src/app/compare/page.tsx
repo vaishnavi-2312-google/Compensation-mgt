@@ -265,7 +265,7 @@ function ComparePageContent() {
           {/* Recalculated Comp difference indicator */}
           <div className="text-center space-y-1">
             <span className="text-[10px] uppercase font-bold text-text-secondary tracking-wider block">Recalculated Delta</span>
-            <div className={`text-xl font-bold flex items-center gap-1 justify-center ${tcDelta > 0 ? 'text-accent-primary' : tcDelta < 0 ? 'text-accent-secondary' : 'text-text-primary'}`}>
+            <div className={`text-xl font-bold flex items-center gap-1 justify-center ${tcDelta > 0 ? 'text-success' : tcDelta < 0 ? 'text-danger' : 'text-text-primary'}`}>
               {tcDelta > 0 ? <TrendingUp className="h-4.5 w-4.5" /> : tcDelta < 0 ? <TrendingDown className="h-4.5 w-4.5" /> : null}
               {tcDelta === 0 ? 'Equal' : `$${Math.abs(tcDelta)}k`}
             </div>
@@ -416,7 +416,7 @@ function ComparePageContent() {
               <span className="text-text-secondary font-semibold">Base Salary</span>
               <div className="flex items-center gap-6">
                 <span>${baseA}k vs ${baseB}k</span>
-                <span className={`font-bold w-16 text-right ${baseDelta > 0 ? 'text-accent-primary' : baseDelta < 0 ? 'text-accent-secondary' : 'text-text-primary'}`}>
+                <span className={`font-bold w-16 text-right ${baseDelta > 0 ? 'text-success' : baseDelta < 0 ? 'text-danger' : 'text-text-primary'}`}>
                   {baseDelta > 0 ? `+$${baseDelta}k` : baseDelta < 0 ? `-$${Math.abs(baseDelta)}k` : '—'}
                 </span>
               </div>
@@ -427,7 +427,7 @@ function ComparePageContent() {
               <span className="text-text-secondary font-semibold">Stock Grants / yr</span>
               <div className="flex items-center gap-6">
                 <span>${stockA}k vs ${stockB}k</span>
-                <span className={`font-bold w-16 text-right ${stockDelta > 0 ? 'text-accent-primary' : stockDelta < 0 ? 'text-accent-secondary' : 'text-text-primary'}`}>
+                <span className={`font-bold w-16 text-right ${stockDelta > 0 ? 'text-success' : stockDelta < 0 ? 'text-danger' : 'text-text-primary'}`}>
                   {stockDelta > 0 ? `+$${stockDelta}k` : stockDelta < 0 ? `-$${Math.abs(stockDelta)}k` : '—'}
                 </span>
               </div>
@@ -438,7 +438,7 @@ function ComparePageContent() {
               <span className="text-text-secondary font-semibold">Bonus / yr</span>
               <div className="flex items-center gap-6">
                 <span>${bonusA}k vs ${bonusB}k</span>
-                <span className={`font-bold w-16 text-right ${bonusDelta > 0 ? 'text-accent-primary' : bonusDelta < 0 ? 'text-accent-secondary' : 'text-text-primary'}`}>
+                <span className={`font-bold w-16 text-right ${bonusDelta > 0 ? 'text-success' : bonusDelta < 0 ? 'text-danger' : 'text-text-primary'}`}>
                   {bonusDelta > 0 ? `+$${bonusDelta}k` : bonusDelta < 0 ? `-$${Math.abs(bonusDelta)}k` : '—'}
                 </span>
               </div>
@@ -449,7 +449,7 @@ function ComparePageContent() {
               <span className="text-text-primary">Total Compensation</span>
               <div className="flex items-center gap-6 text-base">
                 <span>${totalA}k vs ${totalB}k</span>
-                <span className={`w-16 text-right ${tcDelta > 0 ? 'text-accent-primary' : tcDelta < 0 ? 'text-accent-secondary' : 'text-text-primary'}`}>
+                <span className={`w-16 text-right ${tcDelta > 0 ? 'text-success' : tcDelta < 0 ? 'text-danger' : 'text-text-primary'}`}>
                   {tcDelta > 0 ? `+$${tcDelta}k` : tcDelta < 0 ? `-$${Math.abs(tcDelta)}k` : '—'}
                 </span>
               </div>

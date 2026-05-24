@@ -18,17 +18,12 @@ export default function DistributionChart({ data }: DistributionChartProps) {
   const customTooltip = ({ active, payload, label }: any) => {
     if (active && payload && payload.length) {
       return (
-        <div className="rounded-lg border border-border-custom bg-bg-secondary p-3 shadow-md">
-          <p className="text-xs font-semibold uppercase tracking-wider text-text-secondary">{label}</p>
+        <div className="rounded-lg border border-border-custom bg-white/95 backdrop-blur-md p-3 shadow-md">
+          <p className="text-xs font-bold uppercase tracking-wider text-text-secondary">{label}</p>
           <div className="mt-1.5 space-y-1">
-            <p className="text-sm font-bold text-accent-primary">
+            <p className="text-sm font-black text-accent-primary">
               Total Comp: {formatCurrency(payload[0].value)}
             </p>
-            {payload[1] && (
-              <p className="text-xs text-text-secondary">
-                Base Salary: {formatCurrency(payload[1].value)}
-              </p>
-            )}
           </div>
         </div>
       );
@@ -46,27 +41,27 @@ export default function DistributionChart({ data }: DistributionChartProps) {
         >
           <defs>
             <linearGradient id="tcGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#7C5CFF" stopOpacity={0.8} />
-              <stop offset="100%" stopColor="#7C5CFF" stopOpacity={0.15} />
+              <stop offset="0%" stopColor="#1F2937" stopOpacity={0.85} />
+              <stop offset="100%" stopColor="#1F2937" stopOpacity={0.25} />
             </linearGradient>
           </defs>
-          <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.04)" vertical={false} />
+          <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,0,0,0.06)" vertical={false} />
           <XAxis
             dataKey="company"
-            stroke="#94A3B8"
+            stroke="#737373"
             fontSize={12}
             tickLine={false}
             axisLine={false}
             dy={8}
           />
           <YAxis
-            stroke="#94A3B8"
+            stroke="#737373"
             fontSize={11}
             tickLine={false}
             axisLine={false}
             tickFormatter={(v) => `$${v}k`}
           />
-          <Tooltip content={customTooltip} cursor={{ fill: 'rgba(255, 255, 255, 0.02)' }} />
+          <Tooltip content={customTooltip} cursor={{ fill: 'rgba(0, 0, 0, 0.01)' }} />
           <Bar
             dataKey="medianTC"
             name="Total Comp"

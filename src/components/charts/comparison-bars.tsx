@@ -50,11 +50,11 @@ export default function ComparisonBars({ companyA, companyB }: ComparisonBarsPro
   const customTooltip = ({ active, payload, label }: any) => {
     if (active && payload && payload.length) {
       return (
-        <div className="rounded-lg border border-border-custom bg-bg-secondary p-3 shadow-md">
-          <p className="text-xs font-semibold uppercase tracking-wider text-text-secondary">{label}</p>
+        <div className="rounded-lg border border-border-custom bg-white/95 backdrop-blur-md p-3 shadow-md">
+          <p className="text-xs font-bold uppercase tracking-wider text-text-secondary">{label}</p>
           <div className="mt-1.5 space-y-1">
             {payload.map((p: any) => (
-              <p key={p.name} className="text-sm font-bold" style={{ color: p.color }}>
+              <p key={p.name} className="text-sm font-black" style={{ color: p.color }}>
                 {p.name}: {formatCurrency(p.value)}
               </p>
             ))}
@@ -73,39 +73,39 @@ export default function ComparisonBars({ companyA, companyB }: ComparisonBarsPro
           margin={{ top: 10, right: 10, left: -20, bottom: 0 }}
           barGap={4}
         >
-          <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.04)" vertical={false} />
+          <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,0,0,0.06)" vertical={false} />
           <XAxis
             dataKey="category"
-            stroke="#94A3B8"
+            stroke="#737373"
             fontSize={12}
             tickLine={false}
             axisLine={false}
             dy={8}
           />
           <YAxis
-            stroke="#94A3B8"
+            stroke="#737373"
             fontSize={11}
             tickLine={false}
             axisLine={false}
             tickFormatter={(v) => `$${v}k`}
           />
-          <Tooltip content={customTooltip} cursor={{ fill: 'rgba(255, 255, 255, 0.02)' }} />
+          <Tooltip content={customTooltip} cursor={{ fill: 'rgba(0, 0, 0, 0.01)' }} />
           <Legend
             verticalAlign="top"
             height={36}
             iconType="circle"
             iconSize={8}
-            wrapperStyle={{ fontSize: '12px', paddingBottom: '10px' }}
+            wrapperStyle={{ fontSize: '12px', paddingBottom: '10px', fontWeight: '600' }}
           />
           <Bar
             dataKey={companyA.name}
-            fill="#7C5CFF"
+            fill="#1C1C1C"
             radius={[4, 4, 0, 0]}
             maxBarSize={35}
           />
           <Bar
             dataKey={companyB.name}
-            fill="#22C55E"
+            fill="#525252"
             radius={[4, 4, 0, 0]}
             maxBarSize={35}
           />

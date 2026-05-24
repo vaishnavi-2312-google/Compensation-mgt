@@ -75,7 +75,7 @@ export default function SidebarFilters({
             placeholder="Search company, level, title..."
             value={filters.search}
             onChange={e => handleSearchChange(e.target.value)}
-            className="w-full rounded-input border border-border-custom bg-card/50 py-2.5 pl-10 pr-4 text-sm text-text-primary placeholder-text-secondary outline-none ring-accent-primary focus:border-accent-primary focus:ring-1"
+            className="w-full rounded-input border border-border-custom bg-white/60 py-2.5 pl-10 pr-4 text-sm text-text-primary placeholder-text-muted outline-none ring-accent-primary focus:bg-white focus:border-accent-primary focus:ring-1 transition-all duration-150"
           />
         </div>
       </div>
@@ -253,7 +253,7 @@ export default function SidebarFilters({
                     type="number"
                     value={filters.minComp || ''}
                     onChange={e => handleCompChange('minComp', Math.max(0, parseInt(e.target.value || '0', 10)))}
-                    className="w-full rounded-lg border border-border-custom bg-card/30 p-2 text-xs text-text-primary outline-none focus:border-accent-primary"
+                    className="w-full rounded-lg border border-border-custom bg-white/60 p-2 text-xs text-text-primary outline-none focus:bg-white focus:border-accent-primary transition-all duration-150"
                   />
                 </div>
                 <div className="space-y-1">
@@ -262,7 +262,7 @@ export default function SidebarFilters({
                     type="number"
                     value={filters.maxComp || ''}
                     onChange={e => handleCompChange('maxComp', Math.max(0, parseInt(e.target.value || '0', 10)))}
-                    className="w-full rounded-lg border border-border-custom bg-card/30 p-2 text-xs text-text-primary outline-none focus:border-accent-primary"
+                    className="w-full rounded-lg border border-border-custom bg-white/60 p-2 text-xs text-text-primary outline-none focus:bg-white focus:border-accent-primary transition-all duration-150"
                   />
                 </div>
               </div>

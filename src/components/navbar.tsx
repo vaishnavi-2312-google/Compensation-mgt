@@ -17,17 +17,17 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-border-custom bg-bg-primary/80 backdrop-blur-md">
+    <nav className="sticky top-0 z-50 w-full border-b border-border-custom/50 bg-bg-primary/75 backdrop-blur-md shadow-[0_2px_8px_-3px_rgba(0,0,0,0.05)]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center gap-2 font-sans text-xl font-bold tracking-tight text-text-primary">
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-primary text-text-primary shadow-sm shadow-accent-primary/20">
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-primary text-white shadow-sm">
                 𝝣
               </span>
-              <span>
-                Comp<span className="text-accent-primary">Intel</span>
+              <span className="font-semibold">
+                Comp<span className="text-accent-primary font-bold">Intel</span>
               </span>
             </Link>
           </div>
@@ -91,7 +91,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.15 }}
-            className="md:hidden border-t border-border-custom bg-bg-secondary"
+            className="md:hidden border-t border-border-custom/50 bg-bg-primary/95 backdrop-blur-md"
           >
             <div className="space-y-1 px-4 py-4">
               {links.map(link => {
